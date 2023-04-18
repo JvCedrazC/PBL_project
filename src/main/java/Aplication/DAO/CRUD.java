@@ -7,7 +7,7 @@ public interface CRUD <T>{
     public T create(T obj);
     //Read
     public T findById(int id);
-    public List<T> findMany(T obj);
+    public List<T> findMany();
     //update
     public void update(T obj);
     //delete
