@@ -9,8 +9,8 @@ import java.util.Date;
         int customerId;
         int technicianId;
         String description;
-        Date createdAT;
-        Date finishedAT;
+        String createdAT;
+        String finishedAT;
         Double cost;
         String paymentmethod = null;
         List<Services> service;
@@ -72,18 +72,18 @@ import java.util.Date;
         }
 
         //cratedAT getter and setter
-        public void setCreatedAT(Date createdAT) {
+        public void setCreatedAT(String createdAT) {
             this.createdAT = createdAT;
         }
-        public Date getCreatedAT() {
+        public String getCreatedAT() {
             return createdAT;
         }
 
         //finishedAT getter and setter
-        public void setFinishedAT(Date finishedAT) {
+        public void setFinishedAT(String finishedAT) {
             this.finishedAT = finishedAT;
         }
-        public Date getFinishedAT() {
+        public String getFinishedAT() {
             return finishedAT;
         }
 
