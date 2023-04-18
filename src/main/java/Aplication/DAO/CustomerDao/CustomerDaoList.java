@@ -30,7 +30,7 @@ public class CustomerDaoList implements CustomerDAO{
         } return null;
     }
     @Override
-    public List<Customer> findMany(Customer customer){
+    public List<Customer> findMany(){
         List<Customer> listCustomer = new ArrayList<Customer>();
         for (Object o : this.lista) {
             listCustomer.add((Customer) o);
