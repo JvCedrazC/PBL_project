@@ -3,17 +3,26 @@ import java.util.List;
 import java.util.Date;
 
     public class WorkOrder{
-        int id;
-        String status = "Em andamento";
-        Double price;
-        int customerId;
-        int technicianId;
-        String description;
-        String createdAT;
-        String finishedAT;
-        Double cost;
-        String paymentmethod = null;
-        List<Services> service;
+        private int id;
+        private String status = "Em andamento";
+        private Double price;
+        private Double cost;
+        private int customerId;
+        private int technicianId;
+        private String description;
+        private String createdAT;
+        private String finishedAT;
+        private String paymentmethod = null;
+        private List<Services> service;
+
+        public WorkOrder(int id, String status, Double price, Double cost, int customerId, int technicianId ){
+            setId(id);
+            setStatus(status);
+            setCost(cost);
+            setPrice(price);
+            setCustomer(customerId);
+            setTechnician(technicianId);
+        }
 
         //ID setter and getter
         public void setId(int id) {
@@ -106,6 +115,8 @@ import java.util.Date;
         //class' methods
         public void addService(Services service){
             this.service.add(service);
+            this.price = service.getPrice();
+            this.cost = service.getCost();
         }
     }
 
