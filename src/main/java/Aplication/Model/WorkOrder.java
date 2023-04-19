@@ -1,8 +1,7 @@
 package Aplication.Model;
 import java.util.List;
-import java.util.Date;
 
-    public class WorkOrder{
+public class WorkOrder{
         private int id;
         private String status = "Em andamento";
         private Double price;
