@@ -31,7 +31,7 @@ public class CustomerDaoList implements CustomerDAO{
     }
     @Override
     public List<Customer> findMany(){
-        List<Customer> listCustomer = new ArrayList<Customer>();
+        ArrayList<Customer> listCustomer = new ArrayList<Customer>();
         for (Object o : this.lista) {
             listCustomer.add((Customer) o);
         }
@@ -52,12 +52,18 @@ public class CustomerDaoList implements CustomerDAO{
         for (int i = 0; i < this.lista.size(); i++) {
             if (this.lista.get(i).getId() == id) {
                 this.lista.remove(i);
-                return;
+                break;
             }
         }
+       changeId();
     }
     public void deleteMany(){
        this.lista = new ArrayList<Customer>();
        this.nextID =  0;
+    }
+    private void changeId(){
+        for (int i = 0; i < this.lista.size();i++){
+            this.lista.get(i).setId(i);
+        }
     }
 }
