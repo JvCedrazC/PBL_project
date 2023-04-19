@@ -2,7 +2,6 @@ package Aplication.DAO.TechnicianDao;
 
 
 import Aplication.Model.Technician;
-import Aplication.DAO.CRUD;
 
 import java.util.ArrayList;
 import java.util.List;
