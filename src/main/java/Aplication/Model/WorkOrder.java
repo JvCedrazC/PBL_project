@@ -1,5 +1,6 @@
 package Aplication.Model;
 import java.util.List;
+import java.util.ArrayList;
 
 public class WorkOrder{
         private int id;
@@ -12,15 +13,16 @@ public class WorkOrder{
         private String createdAT;
         private String finishedAT;
         private String paymentmethod = null;
-        private List<Services> service;
+        private ArrayList<Services> service;
 
-        public WorkOrder(int id, String status, Double price, Double cost, int customerId, int technicianId ){
+        public WorkOrder(int id, String status, Double price, Double cost, int customerId, int technicianId,String paymentmethod){
             setId(id);
             setStatus(status);
             setCost(cost);
             setPrice(price);
             setCustomer(customerId);
             setTechnician(technicianId);
+            setPaymentmethod(paymentmethod);
         }
 
         //ID setter and getter
@@ -30,7 +32,6 @@ public class WorkOrder{
         public int getId() {
             return id;
         }
-
         //Technician setter and getter
         public void setTechnician(int technician) {
             this.technicianId = technician;
@@ -57,7 +58,7 @@ public class WorkOrder{
 
         //Cost Getter and setter
         public void setCost(Double cost) {
-            this.cost = cost;
+            this.cost = 0.0;
         }
         public Double getCost() {
             return cost;
@@ -65,7 +66,7 @@ public class WorkOrder{
 
         //Price Getter and Setter
         public void setPrice(Double price){
-            this.price = price;
+            this.price = 0.0;
         }
         public Double getPrice() {
             return price;
@@ -107,15 +108,15 @@ public class WorkOrder{
         public List<Services> getService() {
             return service;
         }
-        public void setService(List<Services> service) {
+        /*public void setService(ArrayList<Services> service) {
             this.service = service;
-        }
+        }*/
 
         //class' methods
         public void addService(Services service){
             this.service.add(service);
-            this.price = service.getPrice();
-            this.cost = service.getCost();
+            this.price += service.getPrice();
+            this.cost += service.getCost();
         }
     }
 
