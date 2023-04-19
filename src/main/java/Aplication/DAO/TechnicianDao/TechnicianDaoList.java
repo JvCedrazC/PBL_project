@@ -7,7 +7,7 @@ import Aplication.DAO.CRUD;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TechnicianDaoList implements CRUD<Technician>{
+public class TechnicianDaoList implements TechnicianDAO{
     private List<Technician> lista;
     private int nextID;
 
@@ -22,6 +22,7 @@ public class TechnicianDaoList implements CRUD<Technician>{
         nextID++;
         this.lista.add(technician);
         return technician;
+
     }
 
     @Override
@@ -56,9 +57,10 @@ public class TechnicianDaoList implements CRUD<Technician>{
         for (int i = 0; i < this.lista.size(); i++) {
             if (this.lista.get(i).getId() == id) {
                 this.lista.remove(i);
-                return;
+                break;
             }
         }
+        changeId();
     }
     public void deleteMany(){
         this.lista = new ArrayList<Technician>();
@@ -70,6 +72,11 @@ public class TechnicianDaoList implements CRUD<Technician>{
                 return i;
             }
         }return null;
+    }
+    private void changeId(){
+        for (int i = 0; i < this.lista.size();i++){
+            this.lista.get(i).setId(i);
+        }
     }
 
 }
