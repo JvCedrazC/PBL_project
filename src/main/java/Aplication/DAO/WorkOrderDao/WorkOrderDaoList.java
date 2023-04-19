@@ -1,6 +1,5 @@
 package Aplication.DAO.WorkOrderDao;
 
-import Aplication.DAO.CRUD;
 import Aplication.Model.Customer;
 import Aplication.Model.Technician;
 import Aplication.Model.WorkOrder;
