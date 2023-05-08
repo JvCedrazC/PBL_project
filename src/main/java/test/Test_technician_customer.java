@@ -2,6 +2,7 @@ package test;
 import Aplication.Model.Customer;
 import Aplication.Model.Technician;
 
+
 public class Test_technician_customer {
     String technician_nome = "Tecnico";
     String customer_nome = "Cliente";
